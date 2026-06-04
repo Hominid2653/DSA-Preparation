@@ -6,7 +6,7 @@ class ListNode(object):
 
 
 def deleteDuplicates(head):
-    surrent = head
+    current = head
     
     while current and current.next:
         if current.val == current.next.val:
