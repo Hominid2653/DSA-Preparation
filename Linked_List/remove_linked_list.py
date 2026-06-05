@@ -3,6 +3,19 @@ class ListNode(object):
     def __init__ (self, val=0, next=None):
         self.val = val
         self.next = next
+        
+
+
+def array_to_linked_list(arr):
+     
+    head = ListNode(arr[0])
+    current = head
+    
+    for val in arr[1:]:
+        current.next = ListNode(val)
+        current = current.next
+    
+    return head
 
 
 def deleteDuplicates(head):
@@ -17,17 +30,6 @@ def deleteDuplicates(head):
     return head
 
 
-def array_to_linked_list(arr):
-     
-    head = ListNode(arr[0])
-    current = head
-    
-    for val in arr[1:]:
-        current.next = ListNode(val)
-        current = current.next
-    
-    return head
-
 def print_linked_list(head):
     values = []
     current = head
@@ -36,7 +38,6 @@ def print_linked_list(head):
         current = current.next
     print(" -> ".join(values))
 
-# Example usage
 
 arr = [1, 1, 2, 3, 3, 4, 5, 5, 5]
 head = array_to_linked_list(arr)
